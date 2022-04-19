@@ -1,0 +1,43 @@
+#1 Algorithm design
+
+Pseudocode:
+def root_exhaustive(n, x)
+    for i in range(x)
+        if i^n == x
+            return i
+    return None
+    
+    
+#2 Efficiency analysis
+
+Bisection Method Algorithm
+T(n)=1+max(2, 2, 1+T(n/2), 1+T(n/2))=T(n/2)+2)
+
+Using Master Theorm:
+Base case T(0)=3, so t=1
+T(n) in O(1) when n < t
+
+c(n)=2, r=1, d=2
+
+By properties of O, O(2)=O(n^k) for k = 0
+2^0 = 1, so use case 2
+T(n)=T(n/2)+2  in O(log(n))
+
+Exhaustive Search
+T(n) = n * (1 + 1 + 1) + 1 = 3n + 1
+By properties of O, O(3n + 1) = O(n)
+
+
+#3 Implementation and measurement
+Find the 11th root of 16'985'107'389'382'393'856
+./project3
+
+16985107389382393856 raised to the 1 / 11 power is 56. (63 iterations, 0.000016 seconds)
+16985107389382393856 raised to the 1 / 11 power is 56. (57 iterations, 0.000004 seconds)
+
+It was surprising that exhaustive search beat the decrease-by-half since exhaustive search is linear while decrease-by-half is logrithmic. Although exhaustive searches worst-case is still much worse.
+
+
+
+
+    
